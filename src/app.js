@@ -2,7 +2,7 @@ const express=require('express');
 const path=require('path');
 const methodOverride=require('method-override');
 
-const indexRouter=require('./routes/index');
+const indexRouter=require('./routes/home');
 // const moviesRoutes=require('./routes/moviesRoutes');
 // const genresRoutes=require('./routes/genresRoutes');
 // const actorsRoutes=require('./routes/actorsRoutes');
