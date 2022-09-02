@@ -3,7 +3,7 @@ const path=require('path');
 const methodOverride=require('method-override');
 
 const indexRouter=require('./routes/home');
-// const moviesRoutes=require('./routes/moviesRoutes');
+const moviesRoutes=require('./routes/moviesRoutes');
 // const genresRoutes=require('./routes/genresRoutes');
 // const actorsRoutes=require('./routes/actorsRoutes');
 
@@ -20,7 +20,7 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/',indexRouter);
-// app.use(moviesRoutes);
+app.use(moviesRoutes);
 // app.use(genresRoutes);
 // app.use(actorsRoutes);
 
