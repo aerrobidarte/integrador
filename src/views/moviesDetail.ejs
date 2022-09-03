@@ -18,6 +18,14 @@
     <p>LENGTH: <%= movie.length + ' min'%> </p>
     <p>RELEASE DATE: <%= movie.release_date %> </p>
     <p>GENERO: <%= movie.generos.name %> </p>
+    <p>ACTORES:</p>
+    <ul class="lista_actores">
+        <% for (let i=0;i<movie.actores.length;i++){%>
+            <li>
+                <%=movie.actores[i].first_name%><%=' '%><%=movie.actores[i].last_name%>
+            </li>
+        <% } %>
+    </ul>
     <br>
     <section>
         <a href="/movies/add"><button class="botonAgregar">Agregar</button></a>

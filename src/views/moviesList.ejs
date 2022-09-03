@@ -12,7 +12,7 @@
 <body>
     <h1 class="titulo">LISTADO DE PELÍCULAS</h1>
     <div class="list">
-        <ul>
+        <ul class="list_movies">
             <% for( let i = 0; i < movies.length; i++ ) { %>
             <li>
                 <a href="/movies/detail/<%= movies[i].id %>"><%= movies[i].title %></a>

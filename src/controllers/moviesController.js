@@ -5,7 +5,7 @@ const { Op, Association } = require("sequelize");
 
 const moviesController = {
     detail: function (req, res) {
-        db.Movie.findByPk(req.params.id,{include:[{association:"generos"}]})
+        db.Movie.findByPk(req.params.id,{include:[{association:"generos"},{association:"actores"}]})
             .then(movie => {
                 res.render('moviesDetail.ejs', {movie});
             });
