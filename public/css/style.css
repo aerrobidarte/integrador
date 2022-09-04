@@ -1,28 +1,128 @@
+label{
+  font-weight: bold;
+}
 
+.listar_peliculas{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+}
 .titulo{
     color: red;
     text-align: center;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     font-size: 40px;
 }
-
+.list{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 4px;
+  width: 80%; 
+}
 .list_movies{
     list-style-type: none;
     text-align: center;
     font-size: 25px;
 }
-
 ul li a{
     text-decoration: none;
     color: black;
 }
-
-.list{
-    display: flex;
-    margin: auto;
-    justify-content:center;
-    align-items: center;
-    border: 1px solid #000;
-    width: 100%; 
+.agregar_p{
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 20%;
+  text-align: center;
+  text-decoration: none;
+}
+.agregar_p a{
+  color: white;
+  text-decoration: none;
 }
 
+/* Estilo tabla */
+table, th, td {
+    border:1px solid black;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+.opciones_pelicula{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  /* background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 20%;
+  text-align: center;
+  text-decoration: none; */
+}
+.botonVolver , .botonModificar{
+  color: white;
+  background-color: green;
+  padding: 10px;
+  border-radius: 10px;
+  width: 10%;
+  text-align: center;
+  text-decoration: none;
+  margin: 2px;
+}
+.botonBorrar{
+  color: white;
+  background-color: red;
+  padding: 10px;
+  border-radius: 10px;
+  width: 10%;
+  text-align: center;
+  text-decoration: none;
+  margin: 2px;
+}
+/* Estilos Formularios */
+input, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.formulario {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}

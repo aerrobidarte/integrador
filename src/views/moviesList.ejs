@@ -10,16 +10,21 @@
 </head>
 
 <body>
-    <h1 class="titulo">LISTADO DE PELÍCULAS</h1>
-    <div class="list">
-        <ul class="list_movies">
-            <% for( let i = 0; i < movies.length; i++ ) { %>
-            <li>
-                <a href="/movies/detail/<%= movies[i].id %>"><%= movies[i].title %></a>
-            </li>
-            <% } %>
-        </ul>
-    </div>
+    <main class="listar_peliculas">
+        <h1 class="titulo">LISTADO DE PELÍCULAS</h1>
+        <div class="list">
+            <ul class="list_movies">
+                <% for( let i = 0; i < movies.length; i++ ) { %>
+                <li>
+                    <a href="/movies/detail/<%= movies[i].id %>"><%= movies[i].title %></a>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+        <div class="agregar_p">
+            <a href="/movies/add">AGREGAR PELICULA</a>
+        </div>
+    </main>
 </body>
 
 </html>

@@ -8,34 +8,48 @@
 
 </head>
 <body>
-    <!-- <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
-    </figure> -->
-    <h1><%= movie.title %> </h1>    
-    <!-- <br> -->
-    <p>RATING: <%= movie.rating %> </p>
-    <p>AWARDS: <%= movie.awards %> </p>
-    <p>LENGTH: <%= movie.length + ' min'%> </p>
-    <p>RELEASE DATE: <%= movie.release_date %> </p>
-    <p>GENERO: <%= movie.generos.name %> </p>
-    <p>ACTORES:</p>
-    <ul class="lista_actores">
-        <% for (let i=0;i<movie.actores.length;i++){%>
-            <li>
-                <%=movie.actores[i].first_name%><%=' '%><%=movie.actores[i].last_name%>
-            </li>
-        <% } %>
-    </ul>
+    <h1 style="text-align:center;color: blue; font-size: 50px;" ><%= movie.title %> </h1>    
+    <table style="width:40%" align="center">
+        <tr>
+            <td><b>RATING:</b></td>
+            <td><%= movie.rating ? movie.rating:null %></td>
+        </tr>
+        <tr>
+            <td><b>AWARDS:</b></td>
+            <td><%= movie.awards ? movie.awards:null %></td>
+        </tr>
+        <tr>
+            <td><b>LENGTH:</b></td>
+            <td><%= movie.length + ' min' ? movie.length + ' min':null %></td>
+        </tr>
+        <tr>
+            <td><b>RELEASE DATE:</b></td>
+            <td><%= movie.release_date ? movie.release_date:null  %></td>
+        </tr>
+        <tr>
+            <td><b>GENERO:</b></td>
+            <td><%= movie.genre_id ? movie.generos.name:null %> </td>
+        </tr>
+        <tr>
+            <td><b>ACTORES:</b></td>
+            <td>    <ul class="lista_actores">
+                <% for (let i=0;i<movie.actores.length;i++){%>
+                    <li>
+                        <%=movie.actores[i].first_name%><%=' '%><%=movie.actores[i].last_name%>
+                    </li>
+                <% } %>
+            </ul> </td>
+        </tr>
+      </table>
     <br>
-    <section>
-        <a href="/movies/add"><button class="botonAgregar">Agregar</button></a>
+    <section class="opciones_pelicula">
 
-        <a href="/movies"><button class="botonVolver">Listado de Peliculas</button></a>
+        <a href="/home"class="botonVolver">Volver</a>
 
-        <a href="/movies/edit/<%=movie.id%>"><button class="botonModificar">Modificar</button></a>
+        <a href="/movies/edit/<%=movie.id%>"class="botonModificar">Modificar</a>
 
-        <a href="/movies/delete/<%=movie.id%>"><button class="botonVolver">Borrar</button></a>
-        <!--Aquí debe colocar los botones de Modificar - Borrar y Listado de Películas-->
+        <a href="/movies/delete/<%=movie.id%>"class="botonBorrar">Borrar</a>
+
     </section>
 
 </body>
