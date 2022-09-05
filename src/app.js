@@ -5,7 +5,9 @@ const methodOverride=require('method-override');
 const indexRouter=require('./routes/home');
 const moviesRoutes=require('./routes/moviesRoutes');
 const usersRoutes=require('./routes/usersRoute');
-// let logged = require("./middleware/logged");
+let logged = require("./middlewares/logged");
+let session = require("express-session");
+let cookieParser = require('cookie-parser');
 
 const app=express();
 
@@ -22,7 +24,19 @@ const app=express();
 app.set('views', path.resolve(__dirname, './views'));
 app.set('view engine','ejs');
 
+app.use(
+    session({
+      secret: "234t234bse23rbIUNN@#^421mb_6276gb",
+      resave: false,
+      saveUninitialized: true,
+    })
+  );
+
 app.use(express.static(path.resolve(__dirname, '../public')));
+app.use(cookieParser());
+app.use(logged);
+// app.use(logger('dev'));
+app.use(express.json());
 app.use(methodOverride('_method'));
 // app.use(logged);
 

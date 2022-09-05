@@ -4,10 +4,10 @@ let userController = require('../controllers/usersController.js');
 // let multer = require('multer');
 let path = require('path');
 const db = require('../database/models');
-const guestMiddleware = require('../middlewares/logged');
+const guest = require('../middlewares/guest');
 const auth = require('../middlewares/auth');
 
-router.get('/users/login',guestMiddleware, userController.login);
+router.get('/users/login',guest, userController.login);
 // router.get('/register/:email', userController.askRegister);
 // router.get('/register',guest, userController.register);
 // router.get('/edit/:id',auth, userController.edit);
