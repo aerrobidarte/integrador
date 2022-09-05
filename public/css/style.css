@@ -34,6 +34,21 @@ ul li a{
     color: black;
 }
 .agregar_p{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.opciones_menu{
+  color: white;
+  background-color: green;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  margin: 2px;
+}
+/* .agregar_p{
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -48,7 +63,7 @@ ul li a{
 .agregar_p a{
   color: white;
   text-decoration: none;
-}
+} */
 
 /* Estilo tabla */
 table, th, td {

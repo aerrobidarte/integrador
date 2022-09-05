@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in </title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+
+    <body>
+            <main class="   " id="mainLogin">
+                <div class="centradoxy flexContainer direction-column margin10px">
+
+                    <h1 class="margin10px  "> Ingresa</h1>
+                    
+                    <form autocomplete="off" class="margin10px bgGray flexContainer padding10px centradoxy" id="form-login"
+                    action="/users/login" method="POST">
+                    
+                    <div class=" margin10px centradoxy">
+                            <label for="userLogin">Email:</label>
+                            <div>
+                                <input class="textocentrado margin10px" name="email" type="email" id="userLogin"
+                                     />
+                                <div>
+                                    <div class="validationAlert" id="emailAlert">
+                                        Por favor ingresa un email
+                                    </div>
+                                    <div class="validationAlert" id="emailValidAlert">
+                                        Por favor ingresa un email valido
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="text-danger">
+                                <%= errors.email.msg %>
+                            </div>
+                            <% } %>
+                                <div class=" margin10px ">
+                                    <div>
+                                        <label for="passwordLogin">Contraseña:</label>
+                                    </div>
+                                    <input class="textocentrado margin10px" name="password" autocomplete="off"
+                                        type="password" id="passworLogin" />
+                                    <div class="validationAlert " id="passAlert">
+                                        Por favor ingresa una contraseña
+                                    </div>
+                                </div>
+
+
+                                <div id="botonesLogin" class="">
+                                    <div>
+                                        <label for="recordarLogin" class="margin10px ">¿Recordarme?</label>
+                                        <input class="centradoxy" type="checkbox" name="recordarLogin"
+                                            id="recordarLogin">
+                                    </div>
+                                    <div class="flexContainer centradoxy">
+                                        <button class="margin10px btnSuccess" id="btnLogin" type="submit">Entrar</button>
+                                    </div>
+
+
+                                    <div id="checkboxLogin" class="flexContainer centradoxy margin10px">
+                                    </div>
+
+                                    <div id="btnRegistro " class="flexContainer centradoxy margin10px">
+                                        <a class="margin10px" href="/users/register">¿Aún no te registras?</a>
+                                    </div>
+
+                    </form>
+                </div>
+
+            </main>
+                <!-- <script src="/js/loginUsuario.js"></script> -->
+
+    </body>
+
+    </html>
