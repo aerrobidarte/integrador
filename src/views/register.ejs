@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up </title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+
+<body>
+	<!-- Register-Form -->
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-md-10">
+				<h2 style="text-align: center">Formulario de registro</h2>
+
+				<form id="form-register" action="/users/register" method="POST">
+					<div class="row">
+						<div class="col-md-6 my-1">
+							<div class="form-group">
+								<label><b>Nombre completo:</b></label>
+								<input
+									type="text"
+									name="fullName"
+									class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
+									value="<%= locals.oldData ? oldData.fullName : null %>"
+								>
+								<% if (locals.errors && errors.fullName) { %>
+									<div class="text-danger">
+										<%= errors.fullName.msg %>
+									</div>
+								<% } %>
+							</div>
+						</div><br>
+						<div class="col-md-6 my-1">
+							<div class="form-group">
+								<label><b>Correo electrónico:</b></label>
+								<input
+									type="text"
+									name="email"
+									class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+									value="<%= locals.oldData ? oldData.email : null %>"
+								>
+								<% if (locals.errors && errors.email) { %>
+									<div class="text-danger">
+										<%= errors.email.msg %>
+									</div>
+								<% } %>
+							</div>
+						</div><br>
+						<div class="col-md-6 my-1">
+							<div class="form-group">
+								<label><b>Password:</b></label>
+								<input
+									type="password"
+									name="password"
+									class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+								>
+								<% if (locals.errors && errors.password) { %>
+									<div class="text-danger">
+										<%= errors.password.msg %>
+									</div>
+								<% } %>
+							</div>
+						</div><br>
+                        <div>
+                            <label>Tipo de usuario:</label> <br><br>
+                            <div class="select-rol">
+                                <label for="" style="width: 30%"> Administrador</label><input type="radio" name="userType" value="1" style="display: inline">
+                            </div>
+                            <div class="select-rol">
+                                <label for="" style="width: 30%"> Usuario </label><input type="radio" name="userType" checked="true" value="0">
+                            </div>
+
+                            <div class="button-register">
+                                <a href="/">
+                                    <input type="button" class="btnDanger" value="Cancelar">
+                                </a>
+                                <input class="btnSuccess" id="submitBtn" type="submit" value="Enviar">
+                            </div>
+                        </div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

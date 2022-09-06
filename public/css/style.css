@@ -141,3 +141,16 @@ input[type=submit]:hover {
   background-color: #f2f2f2;
   padding: 20px;
 }
+
+/* Estilos login */
+/* Estilos Register */
+.row{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.select-rol{
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
