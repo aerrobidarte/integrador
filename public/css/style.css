@@ -2,6 +2,9 @@ label{
   font-weight: bold;
 }
 
+.text-danger{
+  color: red;
+}
 .listar_peliculas{
   display: flex;
   width: 100%;
@@ -110,6 +113,7 @@ table, th, td {
   text-decoration: none;
   margin: 2px;
 }
+
 /* Estilos Formularios */
 input, select {
   width: 100%;

@@ -4,7 +4,7 @@ const methodOverride=require('method-override');
 
 const indexRouter=require('./routes/home');
 const moviesRoutes=require('./routes/moviesRoutes');
-const usersRoutes=require('./routes/usersRoute');
+const usersRoutes=require('./routes/usersRoutes');
 let logged = require("./middlewares/logged");
 let session = require("express-session");
 let cookieParser = require('cookie-parser');

@@ -4,6 +4,6 @@ const homeController=require('../controllers/homeController')
 
 
 /* GET home page. */
-router.get('/home', homeController.index);
+router.get('/', homeController.index);
 
 module.exports = router;

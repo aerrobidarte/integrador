@@ -23,13 +23,13 @@
 								<label><b>Nombre completo:</b></label>
 								<input
 									type="text"
-									name="fullName"
+									name="name"
 									class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
-									value="<%= locals.oldData ? oldData.fullName : null %>"
+									value="<%= locals.oldData ? oldData.name : null %>"
 								>
-								<% if (locals.errors && errors.fullName) { %>
+								<% if (locals.errors && errors.name) { %>
 									<div class="text-danger">
-										<%= errors.fullName.msg %>
+										<%= errors.name.msg %>
 									</div>
 								<% } %>
 							</div>
@@ -65,6 +65,17 @@
 								<% } %>
 							</div>
 						</div><br>
+						<div>
+							<label for="">En caso de olvidar tu contraseña...</label>
+							<input name="remember" type="text" id="remember" value="<%= locals.oldData? oldData.remember : null %>" />
+							<div class="text-danger">
+								<% if (locals.errors && errors.remember) { %>
+									<p>
+										<%=errors.remember.msg %>
+									</p>
+								<%}%>
+							</div><br>
+						</div>	
                         <div>
                             <label>Tipo de usuario:</label> <br><br>
                             <div class="select-rol">
@@ -76,7 +87,7 @@
 
                             <div class="button-register">
                                 <a href="/">
-                                    <input type="button" class="btnDanger" value="Cancelar">
+                                    <input type="button" style="background-color:darkcyan; color:white" value="Cancelar">
                                 </a>
                                 <input class="btnSuccess" id="submitBtn" type="submit" value="Enviar">
                             </div>
