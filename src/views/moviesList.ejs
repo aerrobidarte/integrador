@@ -12,6 +12,18 @@
 <body>
     <main class="listar_peliculas">
         <h1 class="titulo">LISTADO DE PELÍCULAS</h1>
+        <% if (locals.isLogged) { %>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/users/profile" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Hola: <%= locals.userLogged%> 
+                </a>
+                <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/user/profile">My profile</a>
+                    <li><hr class="dropdown-divider"></li>
+                    <a class="dropdown-item" href="/user/logout">Logout</a>
+                </ul> -->
+            </li>
+        <% } %>
         <div class="list">
             <ul class="list_movies">
                 <% for( let i = 0; i < movies.length; i++ ) { %>
@@ -22,7 +34,9 @@
             </ul>
         </div>
         <div class="agregar_p">
+            <% if(locals.userRol==1){ %>
             <a href="/movies/add"><button class="opciones_menu">Agregar Pelicula</button></a>
+            <%}%>
             <a href="/users/login"><button class="opciones_menu">Ingresar</button></a>
             <a href="/users/register"><button class="opciones_menu">Registrarme</button> </a>
         </div>

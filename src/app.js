@@ -13,24 +13,16 @@ const app=express();
 
 // const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
-// app.use(session({
-// 	secret: "Shhh, It's a secret",
-// 	resave: false,
-// 	saveUninitialized: false,
-// }));
+app.use(session({
+	secret: "Shhh, It's a secret",
+	resave: false,
+	saveUninitialized: false,
+}));
 // app.use(userLoggedMiddleware);
 
 //settings views
 app.set('views', path.resolve(__dirname, './views'));
 app.set('view engine','ejs');
-
-app.use(
-    session({
-      secret: "234t234bse23rbIUNN@#^421mb_6276gb",
-      resave: false,
-      saveUninitialized: true,
-    })
-  );
 
 app.use(express.static(path.resolve(__dirname, '../public')));
 app.use(cookieParser());

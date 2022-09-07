@@ -18,7 +18,7 @@ let usersController = {
           if (isOkThePassword) {
             delete user.password;
             req.session.userLogged = user;
-            
+         
             if (req.body.recordarLogin == true) {
               res.cookie("user", req.body.email, { maxAge: 1000 * 60 * 60 }); 
             }
@@ -73,6 +73,16 @@ let usersController = {
             .catch((error) => res.send(error));
         }
       },
+      profile: (req, res) => {
+        return res.render('profile', {
+          user: req.session.userLogged
+        });
+      },
+      logout: (req, res) => {
+        res.clearCookie('user');
+        req.session.destroy();
+        return res.redirect('/');
+      }
     
 }
 module.exports=usersController;
