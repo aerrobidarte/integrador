@@ -14,23 +14,58 @@
     <section class="formulario">
         <form action="/movies/create" method="POST">
             <label for="title">Title </label>
-            <input type="text" name="title" id="" placeholder="Movie name" required>
+            <input type="text" name="title" id="" placeholder="Movie name"  value="<%= locals.oldData ? oldData.title : null %>">
+            <% if (locals.errors && errors.title) { %>
+                <div class="text-danger">
+                    <%= errors.title.msg %>
+                </div>
+            <%}%>
+
             <label for="rating">Rating </label>
-            <input type="number" name="rating" id="" placeholder="Movie rating" required>
+            <input type="number" name="rating" id="" placeholder="Movie rating" value="<%= locals.oldData ? oldData.rating : null %>">
+            <% if (locals.errors && errors.rating) { %>
+                <div class="text-danger">
+                    <%= errors.rating.msg %>
+                </div>
+            <%}%>
+
             <label for="awards">Awards </label>
-            <input type="number" name="awards" id="" placeholder="Movie awards" required>
+            <input type="number" name="awards" id="" placeholder="Movie awards" value="<%= locals.oldData ? oldData.awards : null %>">
+            <% if (locals.errors && errors.awards) { %>
+                <div class="text-danger">
+                    <%= errors.awards.msg %>
+                </div>
+            <%}%>
+
             <label for="release_date">Release date </label>
-            <input type="date" name="release_date" id="" required>
+            <input type="date" name="release_date" id="" value="<%= locals.oldData ? oldData.release_date : null %>">
+            <% if (locals.errors && errors.release_date) { %>
+                <div class="text-danger">
+                    <%= errors.release_date.msg %>
+                </div>
+            <%}%>
+
             <label for="length">Length </label>
-            <p><input type="number" name="length" id="" placeholder="Movie duration" required></p>
+            <input type="number" name="length" id="" placeholder="Movie duration"  value="<%= locals.oldData ? oldData.length: null %>">
+            <% if (locals.errors && errors.length) { %>
+                <div class="text-danger">
+                    <%= errors.length.msg %>
+                </div>
+            <%}%>
+            
             <label for="genreID">Genre </label>
             <p>
-                <select name="genre_id" id="" required>
+                <select name="genre_id" id="">
                     <option value="" disabled selected>- select genre - </option>
                     <% allGenres.forEach(genre => { %>
                     <option value="<%= genre.id %>"><%= genre.name %></option>
                     <% }); %>
                 </select>
+                <% if (locals.errors && errors.genre_id) { %>
+                    <div class="text-danger">
+                        <%= errors.genre_id.msg %>
+                    </div>
+                <%}%>
             </p>
             <br>
             <a href="/">

@@ -20,10 +20,15 @@ const moviesController = {
     create: function(req,res){
         let errores = validationResult(req);
         if (errores.errors.length > 0) {
-            res.render("moviesAdd", {
-              errors: errores.mapped(),
-              oldData: req.body,
-            });
+            db.Genre.findAll()
+                .then(allGenres => {
+                    res.render('moviesAdd', {allGenres:allGenres,errors:errores.mapped(),oldData:req.body})
+
+                })
+            // res.render("moviesAdd", {
+            //   errors: errores.mapped(),
+            //   oldData: req.body,
+            // });
         } else {
             db.Movie.create({
                 title:req.body.title,
