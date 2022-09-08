@@ -44,11 +44,13 @@
     <br>
     <section class="opciones_pelicula">
 
-        <a href="/"class="botonVolver">Volver</a>
+            <a href="/"class="botonVolver">Home</a>
 
-        <a href="/movies/edit/<%=movie.id%>"class="botonModificar">Modificar</a>
+        <% if(locals.userRol==1){ %>
+            <a href="/movies/edit/<%=movie.id%>"class="botonModificar">Modificar</a>
 
-        <a href="/movies/delete/<%=movie.id%>"class="botonBorrar">Borrar</a>
+            <a href="/movies/delete/<%=movie.id%>"class="botonBorrar">Borrar</a>
+        <%}%>
 
     </section>
 
