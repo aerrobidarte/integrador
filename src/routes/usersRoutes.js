@@ -49,15 +49,10 @@ const validateUserRegister = [
   ];
 
 router.get('/users/login',guest, userController.login);
-//router.get('/register/:email', userController.askRegister);
 router.get('/users/register',guest, userController.register);
-// router.get('/edit/:id',auth, userController.edit);
 router.get('/users/profile',auth,userController.profile);
 router.get('/users/logout', userController.logout);
 router.post('/users/login', validateUserLogin, userController.loginProcess);
 router.post('/users/register', validateUserRegister, userController.registerWrite);
-// router.put('/update/:id',auth, uploadFile.single('image'), validateUserUpdate, userController.update);
-// router.get('*', userController.notFound);
-
 
 module.exports = router;

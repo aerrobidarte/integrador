@@ -25,10 +25,6 @@ const moviesController = {
                     res.render('moviesAdd', {allGenres:allGenres,errors:errores.mapped(),oldData:req.body})
 
                 })
-            // res.render("moviesAdd", {
-            //   errors: errores.mapped(),
-            //   oldData: req.body,
-            // });
         } else {
             db.Movie.create({
                 title:req.body.title,

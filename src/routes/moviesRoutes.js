@@ -5,6 +5,7 @@ const moviesController = require('../controllers/moviesController');
 const admin = require('../middlewares/admin');
 const {body} = require('express-validator');
 
+
 const validateMovie = [
     body('title').notEmpty().withMessage('Por favor ingrese un titulo'),
     body('title').custom((value, {req}) => {
@@ -35,10 +36,10 @@ const validateMovie = [
 
 router.get('/movies/detail/:id', moviesController.detail);
 router.get('/movies/add',admin, moviesController.add);
-router.post('/movies/create',validateMovie, moviesController.create);
-router.get('/movies/edit/:id', moviesController.edit);
-router.put('/movies/update/:id', moviesController.update);
-router.get('/movies/delete/:id', moviesController.delete);
-router.delete('/movies/delete/:id', moviesController.destroy);
+router.post('/movies/create',admin,validateMovie, moviesController.create);
+router.get('/movies/edit/:id',admin, moviesController.edit);
+router.put('/movies/update/:id',admin,validateMovie, moviesController.update);
+router.get('/movies/delete/:id',admin, moviesController.delete);
+router.delete('/movies/delete/:id',admin, moviesController.destroy);
 
 module.exports = router;
