@@ -34,8 +34,8 @@ const moviesController = {
                 release_date:req.body.release_date,
                 genre_id:req.body.genre_id,
             })
-                .then(
-                    res.redirect("/")
+                .then(()=> {
+                    res.redirect("/")}
                 )
         }
     },
@@ -61,8 +61,8 @@ const moviesController = {
                 id:req.params.id
             }
         })
-            .then( 
-                res.redirect("/")
+            .then( ()=> {
+                res.redirect("/")}
             );
     },
     delete: function (req,res) {
@@ -77,8 +77,8 @@ const moviesController = {
                 id:req.params.id
             }
         })
-            .then(
-                res.redirect("/")
+            .then(()=> {
+                res.redirect("/")}
             )
     }
 
